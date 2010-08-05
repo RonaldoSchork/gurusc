@@ -1,0 +1,7 @@
+<%= div_for comment do %>
+  <p>
+    <%= link_to comment.author, comment.url, :target => "_blank" %><br/>
+    <%= simple_format comment.body %><br/>
+    Posted <%= time_ago_in_words comment.created_at %> ago
+  </p>
+<% end %>

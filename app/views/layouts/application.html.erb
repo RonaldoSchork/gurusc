@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gurusc</title>
+  <%= stylesheet_link_tag "application", "scaffold" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+  <div id="wrapper">
+    <div id="header">
+      <h1>
+        <span>Gurusc</span>
+      </h1>
+
+      <div id="main-nav">
+        <ul>
+          <li><a href="/">home</a></li>
+          <li><a href="/">blog</a></li>
+          <li><a href="/">encontros</a></li>
+          <li><a href="/">membros</a></li>
+          <li><a href="/">projetos</a></li>
+          <li><a href="/">contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="content">
+      <%= flash_messages %>
+
+      <%= yield %>
+    </div>
+
+    <div id="footer">
+      <div id="footer-nav">
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+@import "reset.css";
+
+/* misc */
+body {
+  font-size: 16px;
+  font-family: Bitstream Charter, FreeSerif, Georgia, Times New Roman, serif;
+  margin: 0;
+  padding: 0;
+  color: black;
+  background-color: #e0ebe4 !important;
+  text-align:center;
+}
+
+hr {
+  background-color:#e0ebe4;
+  border:medium none;
+  height:1px;
+  margin: 20px 20px 0 0;
+}
+
+h2, h3, h4, h5 { font-family: Bitstream Charter, FreeSerif, Georgia, Times New Roman, serif; }
+h2 { font-size: 25px; }
+h3 { font-size: 20px; }
+
+a {
+  text-decoration: none;
+  color: #7e1f1f;
+}
+a:hover { color: #000; }
+
+div#wrapper {
+  text-align: left;
+  margin: 0 auto;
+  width: 960px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Topo */
+
+div#header{
+  height: 126px;
+  margin-bottom: 30px;
+}
+
+div#header h1{
+  width: 195px;
+  height: 126px;
+  float:left;
+  background: url(../images/logo_header.png) no-repeat scroll 0 0 transparent;
+  position: absolute;
+}
+div#header h1 span { display:none; }
+
+/* Menu */
+
+div#header #main-nav {
+  float:left;
+  margin-top: 70px;
+  margin-left: 220px;
+}
+
+div#header #main-nav ul { list-style:none; }
+
+div#header #main-nav li {
+  display:inline;
+  float:left;
+  line-height:12px;
+  margin-right:25px;
+}
+
+div#header #main-nav a {
+  font-family: Bitstream Charter, FreeSerif, Georgia, Times New Roman, serif;
+  font-size: 25px;
+}
+
+/* Content */
+div#content {
+  float: left;
+  width: 920px;
+  margin: 40px 20px 40px 20px;   
+  padding: 0 20px 40px 20px; 
+  background-color: white;
+}
+p.note {
+  font-size: 25px;
+}
+div#main_content_home {
+  float: left;
+  width: 500px;
+  padding-right:10px;
+}
+div#right_content {
+  float: left;
+  width: 380px;
+  padding-left:10px;
+}
+div#home_post {
+  float: left;
+  margin-top: 20px;  
+}
+div#home_post hr {
+    margin-bottom:40px;
+}
