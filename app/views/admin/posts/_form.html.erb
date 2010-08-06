@@ -2,6 +2,14 @@
   <%= error_messages_for @post %>
 
   <div id="body">
+  <% if @post.id? %>
+    <h2>
+      Editar post |
+      <%= link_to 'Preview', [:admin, @post], :class => "button", :target => "_blank" %>
+    </h2>
+  <% else %>
+    <h2>Novo post</h2>
+  <% end %>
     <div class="field">
       <%= f.label :author_id, "Por: " %>
       <%= f.collection_select :author_id, @authors, :id, :full_name %>
@@ -12,11 +20,11 @@
     </div>
 
     <div class="field">
-      <%= f.text_area :excerpt, :placeholder => "Resumo", :rows => 5, :cols => 70 %>
+      <%= f.text_area :excerpt, :placeholder => "Resumo", :rows => 5, :cols => 82 %>
     </div>
 
     <div class="field">
-      <%= f.text_area :body, :placeholder => "Post", :rows => 30, :cols => 70 %>
+      <%= f.text_area :body, :placeholder => "Post", :rows => 30, :cols => 82 %>
     </div>
 
     <div class="field">
@@ -44,12 +52,19 @@
       <br/>
     <% end %>
     
-    <hr/>
+    <hr />
     
     <%= section  do %>
       <div class="field">
-        <%= f.label :draft, "Permalink" %><br/>
-        <%= f.text_field :permalink, :size => 27 %>
+        <%= f.label :published_at %><br/>
+        <%= f.date_select :published_at, :use_short_month => true %>
+      </div>
+    <% end %>
+    
+    <%= section  do %>
+      <div class="field">
+        <%= f.label :slug, "Modifique a URL" %><br/>
+        <%= f.text_field :slug, :size => 32 %>
       </div>
     <% end %>    
   </div>

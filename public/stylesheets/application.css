@@ -1,9 +1,12 @@
 @import "reset.css";
+
+/* basic */
 ul { list-style:none; }
 .odd { background-color:#e0ebe4; }
 .even { background-color:#FFF; }
 .left { float: left; }
 .right { float: right; }
+
 /* misc */
 body {
   font-size: 16px;
@@ -11,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   color: black;
-  background-color: #ffffff !important;
+  background-color: #FFF !important;
   text-align:center;
 }
 
@@ -81,22 +84,25 @@ div#header #main-nav a {
 div#content {
   float: left;
   width: 920px;
-  margin: 40px 0 40px 0;   
   padding: 20px;
+  margin: 40px 0 40px 0;   
   background-color: white;
 }
-p.note {
+div#home_post {
+  float: left;
+  width: 920px;
+}
+div.note {
   font-size: 25px;
 }
 div#main_content_home {
   float: left;
-  width: 500px;
-  padding-right:10px;
+  width: 550px;
 }
 div#right_content {
   float: left;
-  width: 380px;
-  padding-left:10px;
+  width: 330px;
+  margin-left:40px;
 }
 div#home_post {
   float: left;
@@ -109,9 +115,19 @@ div#home_post hr {
 div#column1 {
   float: left;
   width: 600px;
-  display: inline;
-}
 
+}
+div#column2{
+  float: left;
+  width: 280px;
+
+  margin-left:40px;
+}
+}
+div.comment {
+    padding: 20px 0 20px 0;
+
+}
 
 /* Admin */
 div#body {
@@ -126,7 +142,7 @@ div#sidebar {
   margin-left: 40px;
 }
 .list li {
-    padding: 4px 6px 4px 6px;
+  padding: 4px 6px 4px 6px;
 }
 
 

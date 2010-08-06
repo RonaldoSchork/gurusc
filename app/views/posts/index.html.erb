@@ -2,7 +2,7 @@
   <%- if @posts.present? -%>
     <%- @posts.each do |post| -%>
       
-      <h2><%= link_to post.title.titleize, post %></h2>
+      <h2><%= link_to post.title, post %></h2>
       
       <div id="post">
         <%= simple_format post.body %>
@@ -13,6 +13,9 @@
     <%- end -%>
     
   <%- else -%>
-    <p>Well start posting soon.</p> 
+    <p>Não há posts.</p> 
   <%- end -%>
 </div>
+
+<%= render "sidebar" %>
+

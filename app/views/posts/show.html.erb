@@ -9,16 +9,20 @@
   <hr />
 
   <div id="comments">
-    <h3>Comentários</h3>
+    <h3>
+      <%= @post.comments.count if @post.comments.present? %> Comentários
+    </h3>
     <%- if @post.comments.any? -%>
      
-      <%= render :partial => @post.comments %>
+      <%= render @post.comments %>
       
     <%- else -%>
-      <p>Nobody commented this post yet.</p>
+      <p>Seja o primeiro a comentar.</p>
     <%- end -%>
   </div>
 
   <%= render "comments/form", :post => @post, :comment => Comment.new %>
   
 </div>
+
+<%= render "sidebar" %>
