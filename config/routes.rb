@@ -1,13 +1,16 @@
 Gurusc::Application.routes.draw do
+  root :to => "home#index"
   
-
-  resources :post_categories
-
-  resources :posts do
+  namespace :admin do
+    resources :posts
+    resources :post_categories, :except => [:show]
+  end
+  
+  resources :posts, :only => [:show, :index] do
     resources :comments
   end
 
-  root :to => "home#index"
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

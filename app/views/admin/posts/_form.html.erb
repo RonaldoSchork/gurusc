@@ -1,0 +1,57 @@
+<%= form_for [:admin, @post] do |f| %>
+  <%= error_messages_for @post %>
+
+  <div id="body">
+    <div class="field">
+      <%= f.label :author_id, "Por: " %>
+      <%= f.collection_select :author_id, @authors, :id, :full_name %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :title, :placeholder => "Título", :class => "title" %>
+    </div>
+
+    <div class="field">
+      <%= f.text_area :excerpt, :placeholder => "Resumo", :rows => 5, :cols => 70 %>
+    </div>
+
+    <div class="field">
+      <%= f.text_area :body, :placeholder => "Post", :rows => 30, :cols => 70 %>
+    </div>
+
+    <div class="field">
+      <%= f.check_box :draft %>
+      <%= f.label :draft, "Rascunho?" %>
+    </div>
+
+    <hr />
+
+    <p>
+      <%= f.submit :class => "button" %> ou <%= link_to "Cancelar", admin_posts_path %>
+    </p>
+  </div>
+
+  <div id="sidebar">
+    <%= section "Categorias" do %>
+      <ul class="categories-field">
+        <%- @categories.each do |c| -%>
+          <li><%= check_box_tag "post[category_ids][]", c.id, @post.categories.include?(c) %> <%= c.name %></li>
+        <%- end -%>
+      </ul>
+      <div class="bar">
+        <%= link_to "New category", new_admin_post_category_path, :class => "button right" %>
+      </div>
+      <br/>
+    <% end %>
+    
+    <hr/>
+    
+    <%= section  do %>
+      <div class="field">
+        <%= f.label :draft, "Permalink" %><br/>
+        <%= f.text_field :permalink, :size => 27 %>
+      </div>
+    <% end %>    
+  </div>
+
+<% end %>

@@ -3,12 +3,12 @@
   <%= error_messages_for comment %>
   
   <div class="field">
-    <%= f.label :author %><br />
+    <%= f.label "Autor" %><br />
     <%= f.text_field :author %>
   </div>
   
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label "E-mail" %><br />
     <%= f.text_field :email %>
   </div>
   
@@ -18,8 +18,8 @@
   </div>
   
   <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
+    <%= f.label "Comentário" %><br />
+    <%= f.text_area :body, :rows => 10, :cols => 70 %>
   </div>
   
   <div class="actions">

@@ -1,5 +1,9 @@
 @import "reset.css";
-
+ul { list-style:none; }
+.odd { background-color:#e0ebe4; }
+.even { background-color:#FFF; }
+.left { float: left; }
+.right { float: right; }
 /* misc */
 body {
   font-size: 16px;
@@ -7,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   color: black;
-  background-color: #e0ebe4 !important;
+  background-color: #ffffff !important;
   text-align:center;
 }
 
@@ -15,7 +19,7 @@ hr {
   background-color:#e0ebe4;
   border:medium none;
   height:1px;
-  margin: 20px 20px 0 0;
+  margin-top: 20px;
 }
 
 h2, h3, h4, h5 { font-family: Bitstream Charter, FreeSerif, Georgia, Times New Roman, serif; }
@@ -55,31 +59,30 @@ div#header h1 span { display:none; }
 /* Menu */
 
 div#header #main-nav {
-  float:left;
+  float:right;
   margin-top: 70px;
   margin-left: 220px;
 }
 
-div#header #main-nav ul { list-style:none; }
+
 
 div#header #main-nav li {
   display:inline;
   float:left;
-  line-height:12px;
-  margin-right:25px;
+  margin-left:22px;
 }
 
 div#header #main-nav a {
   font-family: Bitstream Charter, FreeSerif, Georgia, Times New Roman, serif;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 /* Content */
 div#content {
   float: left;
   width: 920px;
-  margin: 40px 20px 40px 20px;   
-  padding: 0 20px 40px 20px; 
+  margin: 40px 0 40px 0;   
+  padding: 20px;
   background-color: white;
 }
 p.note {
@@ -102,3 +105,48 @@ div#home_post {
 div#home_post hr {
     margin-bottom:40px;
 }
+
+div#column1 {
+  float: left;
+  width: 600px;
+  display: inline;
+}
+
+
+/* Admin */
+div#body {
+  float: left;
+  width: 600px;
+  display: inline;
+}
+div#sidebar {
+  float: left;
+  display: inline;
+  width: 280px;
+  margin-left: 40px;
+}
+.list li {
+    padding: 4px 6px 4px 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100805025132) do
+ActiveRecord::Schema.define(:version => 20100805232951) do
 
   create_table "comments", :force => true do |t|
     t.string   "author"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(:version => 20100805025132) do
     t.datetime "updated_at"
     t.integer  "author_id"
     t.string   "excerpt"
+    t.boolean  "draft"
+    t.string   "permalink"
   end
 
   create_table "users", :force => true do |t|
