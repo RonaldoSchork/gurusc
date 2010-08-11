@@ -50,23 +50,42 @@
         <%= link_to "New category", new_admin_post_category_path, :class => "button right" %>
       </div>
       <br/>
+      <hr />
     <% end %>
     
-    <hr />
-    
-    <%= section  do %>
+    <%= section "Publicar em" do %>
       <div class="field">
-        <%= f.label :published_at %><br/>
         <%= f.date_select :published_at, :use_short_month => true %>
       </div>
+      <hr />
     <% end %>
     
-    <%= section  do %>
+    <%= section "Permalink" do %>
       <div class="field">
-        <%= f.label :slug, "Modifique a URL" %><br/>
+        <%= f.label :slug, "URL" %><br/>
         <%= f.text_field :slug, :size => 32 %>
       </div>
-    <% end %>    
+      <hr />
+    <% end %>
+    
+    <%= section "Imagens" do %>
+      <div class="media">
+        <%- @uploads.each do |a| -%>
+          <%= link_to image_tag(a.document.url(:thumb)) , a.document.url, :target => "_blank"  %>
+        <%- end -%>
+      </div>
+    <% end %>
+    
+    
+
   </div>
 
+<% end %>
+
+<%= javascript_include_tag "lib/jquery.textile.image" %>
+
+<% content_for :bottom do %>
+  <script type="text/javascript" charset="utf-8">
+    $(".media").insertTextileImageTo("#post_body")
+  </script>
 <% end %>

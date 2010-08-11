@@ -8,7 +8,10 @@ class Admin::PostsController < Admin::AdminController
 
   def show
     @post = Post.find(params[:id])
-    render :layout => "application"
+    
+    respond_with @post do |format|
+      format.html { render :layout => "application" }
+    end
   end
 
   def new
@@ -45,6 +48,7 @@ protected
   def load_resources
     @authors = User.all
     @categories = PostCategory.all
+    @uploads = Upload.order("created_at DESC")
   end
 
 end

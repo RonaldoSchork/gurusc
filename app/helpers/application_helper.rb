@@ -10,4 +10,9 @@ module ApplicationHelper
     end.join.html_safe
   end
   
+  def textilize(text)
+    RedCloth.new(text).to_html.html_safe
+  end
+
+  
 end
