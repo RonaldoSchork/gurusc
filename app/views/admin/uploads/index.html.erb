@@ -1,0 +1,33 @@
+<h2>uploads</h2>
+
+<%- if @uploads.present? -%>
+
+  <table class="grid">
+    <% @uploads.each do |upload| %>
+      <%= content_tag_for :tr, upload, :class => cycle(:odd, :even) do %>
+        <td style="width:10%">
+          <%= link_to image_tag(upload.document.url(:thumb), :class => "middle"), [:admin, upload] %>
+        </td>
+        <td>
+          <%= link_to upload.title, [:admin, upload] %>
+        </td>
+        <td style="width:15%; text-align:right;">
+          <%= link_to_edit [:edit, :admin, upload] %>
+          <%= link_to_destroy [:admin, upload] %>
+        </td>
+      <% end %>
+    <% end %>
+  </table>
+
+<%- else -%>
+  <p>Não há nenhum upload.</p>
+<%- end -%>
+
+<hr class="thick" />
+
+<div class="bar">
+  <div class="right">
+    <%= link_to 'Novo upload', new_admin_upload_path, :class => "button" %>
+  </div>
+</div>
+

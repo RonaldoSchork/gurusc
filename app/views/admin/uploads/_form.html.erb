@@ -1,0 +1,22 @@
+<%= form_for [:admin, @upload], :html => { :multipart => true }  do |f| %>
+  <%= error_messages_for @upload %>
+
+  <div class="field">
+    <%= f.text_field :title, :placeholder => "Título" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :description, :placeholder => "Descrição" %>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :document %>
+  </div>
+
+  <hr />
+
+  <p>
+    <%= f.submit :class => "button" %> ou <%= link_to "cancelar", admin_uploads_path %>
+  </p>
+<% end %>
+

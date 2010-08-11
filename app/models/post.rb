@@ -12,6 +12,8 @@ class Post < ActiveRecord::Base
   scope :published, lambda { where("draft = ? AND published_at < ?", false, Time.current) }
   scope :search, lambda { |terms| where("title LIKE :t OR body LIKE :t", :t => "%#{terms}%") }
   
+  before_validation :generate_slug
+  
   def to_param
     "#{id}-#{slug}"
   end

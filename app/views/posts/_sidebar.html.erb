@@ -1,0 +1,29 @@
+<div id="column2">
+
+  <h3>Pesquisa</h3>
+
+  <%= form_tag posts_path, :method => :get do %>
+    <%= text_field_tag :search, "",
+          :placeholder => "palavras-chave",
+          :size => 30,
+          :type => "search",
+          :class => "search-field" %>
+  <% end %>
+
+  <h3>Categorias</h3>
+
+  <ul class="squared">
+    <% @categories.each do |category| %>
+      <li><%= link_to_unless_current category.name, posts_path(:category_id => category.id) %></li>
+    <% end %>
+  </ul>
+
+  <h3>Novidades?</h3>
+
+  <ul class="squared">
+    <li>Sigam-nos no Twitter</li>
+    <li>Assine nosso Feed</li>
+  </ul>
+
+</div>
+
