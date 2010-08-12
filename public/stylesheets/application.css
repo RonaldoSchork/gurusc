@@ -33,6 +33,7 @@ a {
   text-decoration: none;
   color: #7e1f1f;
 }
+
 a:hover { color: #000; }
 
 div#wrapper {
@@ -45,19 +46,22 @@ div#wrapper {
 
 /* Topo */
 
-div#header{
+div#header {
   height: 126px;
   margin-bottom: 30px;
 }
 
-div#header h1{
+div#header h1 {
   width: 195px;
   height: 126px;
   float:left;
   background: url(../images/logo_header.png) no-repeat scroll 0 0 transparent;
   position: absolute;
 }
-div#header h1 span { display:none; }
+
+div#header h1 span {
+  display:none;
+}
 
 /* Menu */
 
@@ -66,8 +70,6 @@ div#header #main-nav {
   margin-top: 70px;
   margin-left: 220px;
 }
-
-
 
 div#header #main-nav li {
   display:inline;
@@ -85,48 +87,52 @@ div#content {
   float: left;
   width: 920px;
   padding: 20px;
-  margin: 40px 0 40px 0;   
+  margin: 40px 0 40px 0;
   background-color: white;
 }
+
 div#home_post {
   float: left;
   width: 920px;
 }
+
 div.note {
   font-size: 25px;
 }
+
 div#main_content_home {
   float: left;
   width: 550px;
 }
+
 div#right_content {
   float: left;
   width: 330px;
   margin-left:40px;
 }
+
 div#home_post {
   float: left;
-  margin-top: 20px;  
+  margin-top: 20px;
 }
+
 div#home_post hr {
-    margin-bottom:40px;
+  margin-bottom:40px;
 }
 
 div#column1 {
   float: left;
   width: 600px;
-
 }
+
 div#column2{
   float: left;
   width: 280px;
-
   margin-left:40px;
 }
-}
-div.comment {
-    padding: 20px 0 20px 0;
 
+div.comment {
+  padding: 20px 0 20px 0;
 }
 
 /* Admin */
@@ -135,34 +141,14 @@ div#body {
   width: 600px;
   display: inline;
 }
+
 div#sidebar {
   float: left;
   display: inline;
   width: 280px;
   margin-left: 40px;
 }
+
 .list li {
   padding: 4px 6px 4px 6px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

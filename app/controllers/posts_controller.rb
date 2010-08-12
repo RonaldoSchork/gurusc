@@ -13,11 +13,11 @@ class PostsController < ApplicationController
     @post = Post.published.find(params[:id])
     respond_with @post
   end
-  
+
 protected
+
   def load_categories
     @categories = PostCategory.all
-    @category = PostCategory.find(params[:category_id]) if params[:category_id]
+    @category   = PostCategory.find(params[:category_id]) if params[:category_id]
   end
-  
 end
