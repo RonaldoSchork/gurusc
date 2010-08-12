@@ -8,7 +8,7 @@ class Admin::PostsController < Admin::AdminController
 
   def show
     @post = Post.find(params[:id])
-    
+
     respond_with @post do |format|
       format.html { render :layout => "application" }
     end
@@ -50,5 +50,4 @@ protected
     @categories = PostCategory.all
     @uploads = Upload.order("created_at DESC")
   end
-
 end

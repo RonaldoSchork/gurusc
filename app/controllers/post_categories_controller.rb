@@ -1,6 +1,5 @@
 class PostCategoriesController < ApplicationController
-  # GET /post_categories
-  # GET /post_categories.xml
+
   def index
     @post_categories = PostCategory.all
 
@@ -10,8 +9,6 @@ class PostCategoriesController < ApplicationController
     end
   end
 
-  # GET /post_categories/1
-  # GET /post_categories/1.xml
   def show
     @post_category = PostCategory.find(params[:id])
 
@@ -21,8 +18,6 @@ class PostCategoriesController < ApplicationController
     end
   end
 
-  # GET /post_categories/new
-  # GET /post_categories/new.xml
   def new
     @post_category = PostCategory.new
 
@@ -32,13 +27,10 @@ class PostCategoriesController < ApplicationController
     end
   end
 
-  # GET /post_categories/1/edit
   def edit
     @post_category = PostCategory.find(params[:id])
   end
 
-  # POST /post_categories
-  # POST /post_categories.xml
   def create
     @post_category = PostCategory.new(params[:post_category])
 
@@ -53,8 +45,6 @@ class PostCategoriesController < ApplicationController
     end
   end
 
-  # PUT /post_categories/1
-  # PUT /post_categories/1.xml
   def update
     @post_category = PostCategory.find(params[:id])
 
@@ -69,8 +59,6 @@ class PostCategoriesController < ApplicationController
     end
   end
 
-  # DELETE /post_categories/1
-  # DELETE /post_categories/1.xml
   def destroy
     @post_category = PostCategory.find(params[:id])
     @post_category.destroy

@@ -9,5 +9,4 @@ module PostsHelper
     name = "Anonymous Coward" unless name.present?
     url.present? ? link_to(name, url, :target => "_blank") : name
   end
-
 end
