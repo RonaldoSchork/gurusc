@@ -1,0 +1,18 @@
+== GuruSC
+
+Site em desenvolvimento do GuruSC.
+
+Para informações envie um email para a lista do grupo: http://groups.google.com/group/guru-sc
+
+== Estrutura:
+
+* blog
+* encontros
+* membros
+* projetos
+* contato
+
+== Desenvolvimento
+
+* Marcelo Cajueiro (http://github.com/MarceloCajueiro)
+* Carlos Antonio da Silva (http://github.com/carlosantoniodasilva)
