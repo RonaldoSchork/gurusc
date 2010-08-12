@@ -1,0 +1,51 @@
+== GuruSC TODO
+
+Brainstorming to create a task list for the site.
+If you're interested in helping, please feel free to contact us.
+
+=== Layout
+
+* Logo
+* Layout
+
+=== Home
+
+* Next meeting
+* Last metting updates?
+* Twitter info
+* Last blog post
+* Search the site
+
+=== Blog
+
+* Last posts
+* Posts search
+
+=== Meetings
+
+* List with links to slides/pictures/code/etc
+
+=== Members
+
+* List all members
+
+=== Projects
+
+* All OSS projects
+
+=== Contact
+
+* Contact form
+* Send email to one or more people responsible
+
+ps.: é necessário?
+
+=== Admin
+
+* Sign in/out of admins
+* CRUD members
+* CRUD OSS projects
+* CRUD meetings
+* CRUD posts
+* CRUD categories
+* CRUD upload ---- really need?

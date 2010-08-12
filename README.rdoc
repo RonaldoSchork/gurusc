@@ -1,18 +1,18 @@
 == GuruSC
 
-Site em desenvolvimento do GuruSC.
+Work in progress.
 
-Para informações envie um email para a lista do grupo: http://groups.google.com/group/guru-sc
+For more info, please take a look at the mailing list: http://groups.google.com/group/guru-sc
 
-== Estrutura:
+== Basic structure
 
 * blog
-* encontros
-* membros
-* projetos
-* contato
+* meetings
+* members
+* open source projects
+* contact
 
-== Desenvolvimento
+== Development
 
 * Marcelo Cajueiro (http://github.com/MarceloCajueiro)
 * Carlos Antonio da Silva (http://github.com/carlosantoniodasilva)
