@@ -22,13 +22,18 @@
             <% end %>
           </li>
           <li>
-            <%= link_to posts_path do %>
+            <%= link_to admin_posts_path do %>
               blog
             <% end %>
           </li>
           <li><a href="/">encontros</a></li>
           <li><a href="/">membros</a></li>
           <li><a href="/">projetos</a></li>
+          <li>
+            <%= link_to admin_users_path do %>
+              usuários
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>
