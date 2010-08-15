@@ -11,16 +11,39 @@
   <div id="wrapper">
     <div id="header">
       <h1>
-        <span>Gurusc</span>
+        <span>Guru-sc</span>
       </h1>
 
       <div id="main-nav">
         <ul>
+<<<<<<< HEAD
           <li><%= link_to 'home', root_path %></li>
           <li><%= link_to 'blog', posts_path %></li>
+=======
+          <li>
+            <%= link_to root_path do %>
+              home
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_posts_path do %>
+              blog
+            <% end %>
+          </li>
+>>>>>>> work
           <li><a href="/">encontros</a></li>
           <li><a href="/">membros</a></li>
           <li><a href="/">projetos</a></li>
+          <li>
+            <%= link_to admin_users_path do %>
+              usuários
+            <% end %>
+          </li>
+          <li>
+            <% if user_signed_in? %>
+              <%= link_to 'logout', destroy_user_session_path %> 
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>
@@ -33,5 +56,6 @@
   </div>
 
   <%= yield :bottom %>
+
 </body>
 </html>

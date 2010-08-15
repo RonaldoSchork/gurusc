@@ -1,4 +1,4 @@
-class Admin::PostCategoriesController < ApplicationController
+class Admin::PostCategoriesController < Admin::AdminController
 
   def index
     @categories = PostCategory.all

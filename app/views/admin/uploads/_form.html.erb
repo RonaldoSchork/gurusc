@@ -2,11 +2,13 @@
   <%= error_messages_for @upload %>
 
   <div class="field">
-    <%= f.text_field :title, :placeholder => "Título" %>
+    <%= f.label "Título" %>
+    <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <%= f.text_field :description, :placeholder => "Descrição" %>
+    <%= f.label "Descrição" %>
+    <%= f.text_field :description %>
   </div>
 
   <div class="field">
@@ -16,7 +18,7 @@
   <hr />
 
   <p>
-    <%= f.submit :class => "button" %> ou <%= link_to "cancelar", admin_uploads_path %>
+    <%= f.submit "Enviar", :class => "button" %> ou <%= link_to "cancelar", admin_uploads_path %>
   </p>
 <% end %>
 
