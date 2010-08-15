@@ -11,20 +11,23 @@
     <h2>Novo post</h2>
   <% end %>
     <div class="field">
-      <%= f.label :author_id, "Por: " %>
+      <%= f.label "Autor " %>
       <%= f.collection_select :author_id, @authors, :id, :full_name %>
     </div>
 
     <div class="field">
-      <%= f.text_field :title, :placeholder => "Título", :class => "title" %>
+      <%= f.label "Título" %>
+      <%= f.text_field :title, :class => "title" %>
     </div>
 
     <div class="field">
-      <%= f.text_area :excerpt, :placeholder => "Resumo", :rows => 5, :cols => 82 %>
+      <%= f.label "Resumo" %>
+      <%= f.text_area :excerpt, :rows => 5, :cols => 82 %>
     </div>
 
     <div class="field">
-      <%= f.text_area :body, :placeholder => "Post", :rows => 30, :cols => 82 %>
+      <%= f.label "Post" %>
+      <%= f.text_area :body, :rows => 30, :cols => 82 %>
     </div>
 
     <div class="field">
@@ -35,7 +38,7 @@
     <hr />
 
     <p>
-      <%= f.submit :class => "button" %> ou <%= link_to "Cancelar", admin_posts_path %>
+      <%= f.submit :class => "button" %> ou <%= link_to "cancelar", admin_posts_path %>
     </p>
   </div>
 
@@ -76,8 +79,6 @@
       </div>
     <% end %>
     
-    
-
   </div>
 
 <% end %>
