@@ -1,14 +1,12 @@
-<div class="note">Seja <strong>bem-vindo</strong> ao Grupo de Usuários Ruby (Rails) de <strong>Santa Catarina</strong>. <br />Nosso intuito é unir pessoas com objetivos em comum, difundir esta maravilhosa linguagem (framework) com a qual trabalhamos por <strong>prazer</strong>.</div>
+<div class="note">
+  Seja <strong>bem-vindo</strong> ao Grupo de Usuários Ruby (Rails) de <strong>Santa Catarina</strong>. <br />Nosso intuito é unir pessoas com objetivos em comum, difundir esta maravilhosa linguagem (framework) com a qual trabalhamos por <strong>prazer</strong>.
+</div>
 
 <hr />
 
-
-
 <div id="main_content_home">
-
   <h2>Próximo encontro</h2>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper adipiscing mauris, sit amet varius dui blandit vitae.</p>
-
   <p>Assunto: BDD;</p>
   <p>Data: 15 de outubro de 2010;</p>
   <p>Cidade: Florianópolis;</p>
@@ -27,25 +25,15 @@
   <a href="http://twitter.com/gurusc/">Fallow us</a>
 </div>
 
-
-
-<div id="home_post">
-  <hr />
-  <h2>Últimos posts</h2>
-  <%- if @last_posts.present? -%>
-    <%- @last_posts.each do |post| -%>
-      
-      <h3><%= link_to post.title, post %></h3>
-      
+<%- if @last_post.present? -%>
+  <div id="home_post">
+    <hr />
+    <h2>Últimos posts</h2>
+      <h3><%= link_to @last_post.title, @last_post %></h3>
       <div id="post">
-        <%= simple_format post.excerpt %>
+        <%= simple_format @last_post.excerpt %>
       </div>
-      <%= link_to "Continue lendo...", post %>
+      <%= link_to "Continue lendo...", @last_post %>
       <hr/>
-      
-    <%- end -%>
-    
-  <%- else -%>
-    <p>Ainda não há posts.</p> 
-  <%- end -%>
-</div>
+  </div>
+<%- end -%>

@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @last_posts = Post.all
+    @last_post = Post.last
   end
 
 end
