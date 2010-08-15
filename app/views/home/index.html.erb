@@ -25,15 +25,15 @@
   <a href="http://twitter.com/gurusc/">Fallow us</a>
 </div>
 
-<%- if @last_post.present? -%>
+<%- if @posts.last.present? -%>
   <div id="home_post">
     <hr />
     <h2>Últimos posts</h2>
-      <h3><%= link_to @last_post.title, @last_post %></h3>
+      <h3><%= link_to @posts.last.title, @posts.last %></h3>
       <div id="post">
-        <%= simple_format @last_post.excerpt %>
+        <%= simple_format @posts.last.excerpt %>
       </div>
-      <%= link_to "Continue lendo...", @last_post %>
+      <%= link_to "Continue lendo...", @posts.last %>
       <hr/>
   </div>
 <%- end -%>
