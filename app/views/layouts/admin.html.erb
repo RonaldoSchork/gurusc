@@ -11,7 +11,7 @@
   <div id="wrapper">
     <div id="header">
       <h1>
-        <span>Gurusc</span>
+        <span>Guru-sc</span>
       </h1>
 
       <div id="main-nav">
@@ -34,6 +34,11 @@
               usuários
             <% end %>
           </li>
+          <li>
+            <% if user_signed_in? %>
+              <%= link_to 'logout', destroy_user_session_path %> 
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>
@@ -46,5 +51,6 @@
   </div>
   
   <%= yield :bottom %>
+
 </body>
 </html>
