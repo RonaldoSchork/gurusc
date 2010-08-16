@@ -1,9 +1,6 @@
 Gurusc::Application.routes.draw do
 
   root :to => "home#index"
-<<<<<<< HEAD
-
-=======
   
   scope '/admin' do
     devise_for :users, :controllers => {
@@ -11,8 +8,7 @@ Gurusc::Application.routes.draw do
       :passwords     => "admin/passwords"
     }
   end
-  
->>>>>>> work
+
   namespace :admin do
     root :to => "posts#index"
     resources :users, :except => [:show]
@@ -24,8 +20,5 @@ Gurusc::Application.routes.draw do
   resources :posts, :only => [:show, :index] do
     resources :comments
   end
-<<<<<<< HEAD
-=======
 
->>>>>>> work
 end
