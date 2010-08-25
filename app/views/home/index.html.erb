@@ -6,11 +6,10 @@
 
 <div id="main_content_home">
   <h2>Próximo encontro</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper adipiscing mauris, sit amet varius dui blandit vitae.</p>
-  <p>Assunto: BDD;</p>
-  <p>Data: 15 de outubro de 2010;</p>
-  <p>Cidade: Florianópolis;</p>
-  <a href="http://maps.google.com.br/">Local</a>
+  <h3><%= link_to @last_meeting.title, @last_meeting %></h3>
+  <p>dia <%= @last_meeting.date %> por <%= @last_meeting.autor %></p>
+  <%= @last_meeting.description[0..400] + "..." %>
+  <br/>
 </div>
 
 <div id="right_content">
@@ -25,15 +24,15 @@
   <a href="http://twitter.com/gurusc/">Fallow us</a>
 </div>
 
-<%- if @posts.last.present? -%>
+<%- if @last_post.present? -%>
   <div id="home_post">
     <hr />
     <h2>Últimos posts</h2>
-      <h3><%= link_to @posts.last.title, @posts.last %></h3>
+      <h3><%= link_to @last_post.title, @last_post %></h3>
       <div id="post">
-        <%= simple_format @posts.last.excerpt %>
+        <%= simple_format @last_post.excerpt %>
       </div>
-      <%= link_to "Continue lendo...", @posts.last %>
+      <%= link_to "Continuar lendo...", @last_post %>
       <hr/>
   </div>
 <%- end -%>
