@@ -1,0 +1,26 @@
+<h2>Encontros</h2>
+
+<%- if @meetings.present? -%>
+<ul class="list">
+  <% @meetings.each do |meeting| %>
+    <%= content_tag_for :li, meeting, :class => cycle(:odd, :even) do %>
+      <%= link_to meeting.title, [:edit, :admin, meeting] %>
+
+      <div class="right">
+        <%= link_to_edit [:edit, :admin, meeting] %>,
+        <%= link_to_destroy [:admin, meeting] %>
+      </div>
+    <% end %>
+  <% end %>
+</ul>
+<%- else -%>
+  <p>Ainda não há encontros cadastrados.</p>
+<%- end -%>
+
+<hr />
+
+<div class="bar">
+  <div class="right">
+    <%= link_to 'Novo encontro', new_admin_meeting_path, :class => "button" %>
+  </div>
+</div>
