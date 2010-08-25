@@ -1,5 +1,7 @@
 Gurusc::Application.routes.draw do
 
+  resources :meetings
+
   root :to => "home#index"
   
   scope '/admin' do
@@ -15,6 +17,7 @@ Gurusc::Application.routes.draw do
     resources :posts
     resources :post_categories, :except => [:show]
     resources :uploads
+    resources :meetings, :except => [:show]
   end
 
   resources :posts, :only => [:show, :index] do

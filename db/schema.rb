@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100809015342) do
+ActiveRecord::Schema.define(:version => 20100824024626) do
 
   create_table "comments", :force => true do |t|
     t.string   "author"
@@ -18,6 +18,18 @@ ActiveRecord::Schema.define(:version => 20100809015342) do
     t.string   "url"
     t.text     "body"
     t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "meetings", :force => true do |t|
+    t.string   "title"
+    t.date     "date"
+    t.string   "autor"
+    t.text     "description"
+    t.string   "code"
+    t.string   "video"
+    t.string   "slide"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
