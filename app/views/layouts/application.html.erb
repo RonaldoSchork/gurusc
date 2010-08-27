@@ -1,36 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gurusc</title>
+  <title><%= application_title %></title>
   <%= stylesheet_link_tag "application", "scaffold" %>
   <%= javascript_include_tag "lib/jquery", "rails" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
   <div id="wrapper">
     <div id="header">
       <h1>
-        <span>Gurusc</span>
+        <span><%= application_title %></span>
       </h1>
 
       <div id="main-nav">
         <ul>
-          <li>
-            <%= link_to root_path do %>
-              home
-            <% end %>
-          </li>
-          <li>
-            <%= link_to posts_path do %>
-              blog
-            <% end %>
-          </li>
-          <li>
-            <%= link_to meetings_path do %>
-              encontros
-            <% end %>
-          </li>
+          <li><%= link_to 'home', root_path %></li>
+          <li><%= link_to 'blog', posts_path %></li>
+          <li><%= link_to 'encontros', meetings_path %></li>
           <li><a href="/">membros</a></li>
           <li><a href="/">projetos</a></li>
           <li><a href="/">contato</a></li>
@@ -40,18 +27,13 @@
 
     <div id="content">
       <%= flash_messages %>
-
       <%= yield %>
     </div>
 
     <div id="footer">
       <div id="footer-nav">
-
       </div>
     </div>
   </div>
-
-
-
 </body>
 </html>

@@ -1,60 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Guru SC</title>
+  <title><%= application_title %></title>
   <%= stylesheet_link_tag "application", "scaffold" %>
   <%= javascript_include_tag "lib/jquery", "rails" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
   <div id="wrapper">
     <div id="header">
       <h1>
-        <span>Guru-sc</span>
+        <span><%= application_title %></span>
       </h1>
 
       <div id="main-nav">
         <ul>
-          <li>
-            <%= link_to root_path do %>
-              home
-            <% end %>
-          </li>
-          <li>
-            <%= link_to admin_posts_path do %>
-              blog
-            <% end %>
-          </li>
-          <li>
-            <%= link_to admin_meetings_path do %>
-              encontros
-            <% end %>
-          </li>
+          <li><%= link_to 'home', root_path %></li>
+          <li><%= link_to 'blog', admin_posts_path %><li>
+          <li><%= link_to 'encontros', admin_meetings_path %></li>
           <li><a href="/">membros</a></li>
           <li><a href="/">projetos</a></li>
-          <li>
-            <%= link_to admin_users_path do %>
-              usuários
-            <% end %>
-          </li>
-          <li>
-            <% if user_signed_in? %>
-              <%= link_to 'logout', destroy_user_session_path %> 
-            <% end %>
-          </li>
+          <li><%= link_to 'usuários', admin_users_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'logout', destroy_user_session_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>
 
     <div id="content">
       <%= flash_messages %>
-
       <%= yield %>
     </div>
   </div>
 
   <%= yield :bottom %>
-
 </body>
 </html>
