@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
   scope :search, lambda { |terms| where("title LIKE :t OR body LIKE :t", :t => "%#{terms}%") }
 
   delegate :full_name, :to => :author, :prefix => true
-  
+
   before_validation :generate_slug
 
   def to_param
@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
 protected
 
   def generate_slug
-    self.slug = title unless slug.present?
+    self.slug = title if slug.blank?
     self.slug = slug.parameterize
   end
 end

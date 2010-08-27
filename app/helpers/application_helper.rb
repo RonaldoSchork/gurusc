@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def application_title
+    'Guru SC'
+  end
+
   def error_messages_for(resource)
      render "shared/error_messages", :resource => resource
   end
