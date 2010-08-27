@@ -1,5 +1,7 @@
 Gurusc::Application.routes.draw do
 
+  resources :projects
+
   resources :meetings
 
   root :to => "home#index"
@@ -15,6 +17,7 @@ Gurusc::Application.routes.draw do
     root :to => "posts#index"
     resources :users, :except => [:show]
     resources :posts
+    resources :projects
     resources :post_categories, :except => [:show]
     resources :uploads
     resources :meetings, :except => [:show]
