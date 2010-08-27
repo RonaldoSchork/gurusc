@@ -2,17 +2,14 @@
 <html>
 <head>
   <title><%= application_title %></title>
-  <%= stylesheet_link_tag "application", "scaffold" %>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "lib/jquery", "rails" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
   <div id="wrapper">
     <div id="header">
-      <h1>
-        <span><%= application_title %></span>
-      </h1>
-
+      <h1><%= application_title %></h1>
       <div id="main-nav">
         <ul>
           <li><%= link_to 'home', root_path %></li>
