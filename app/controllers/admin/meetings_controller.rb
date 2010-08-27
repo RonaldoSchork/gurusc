@@ -28,7 +28,7 @@ class Admin::MeetingsController < Admin::AdminController
 
   def update
     @meeting = Meeting.find(params[:id])
-    flash[:notice] = 'Post was successfully updated.' if @meeting.update_attributes(params[:meeting])
+    flash[:notice] = 'Meeting was successfully updated.' if @meeting.update_attributes(params[:meeting])
     respond_with @meeting, :location => edit_admin_meeting_path(@meeting)
 
   end
