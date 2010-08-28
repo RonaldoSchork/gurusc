@@ -1,27 +1,22 @@
-<h1>Listing projects</h1>
+<h2>Projetos</h2>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Git</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% if @projects.present? %>
+    <% @projects.each do |project| %>
+    
+    <% content_tag :div, :id => "sub_content", :class => cycle(:odd, :even)  do %>
+    
+      <h3><%= link_to project.name, project.git, :target => '_blank' %></h3>
+      
+      <%= project.description %>
+      <h4>Membros colaboradores</h4>
+      
+      <% content_tag :div :id => "sub_content" do %>
+        <% project.users.each do |user| %>
+          <%= link_to user.full_name %>
+        <% end %>
+      <% end %>
+      
+    <% end %>
 
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name %></td>
-    <td><%= project.description %></td>
-    <td><%= project.git %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <% end %>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Project', new_project_path %>

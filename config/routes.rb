@@ -1,5 +1,10 @@
 Gurusc::Application.routes.draw do
-
+  
+  resources :projects do
+    get 'member_add', :on => :member
+    get 'member_remove', :on => :member
+  end
+  
   resources :projects
 
   resources :meetings

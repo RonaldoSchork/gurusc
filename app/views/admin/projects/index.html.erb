@@ -1,27 +1,25 @@
-<h1>Listing projects</h1>
+<h2>Projetos</h2>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Git</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name %></td>
-    <td><%= project.description %></td>
-    <td><%= project.git %></td>
-    <td><%= link_to 'Show', [:admin, project] %></td>
-    <td><%= link_to 'Edit', [:edit, :admin, project] (project) %></td>
-    <td><%= link_to 'Destroy', [:admin, project], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% if @projects.present? %>
+<ul class="list">
+  <% @projects.each do |project| %>
+    <%= content_tag_for :li, project, :class => cycle(:odd, :even) do %>
+      <%= link_to project.name, [:edit, :admin, project] %>
+      <div class="right">
+        <%= link_to_edit [:edit, :admin, project] %>,
+        <%= link_to_destroy [:admin, project] %>
+      </div>
+    <% end %>
+  <% end %>
+</ul>
+<% else %>
+  <p>Ainda não há projetos criados.</p>
 <% end %>
-</table>
 
-<br />
+<hr />
 
-<%= link_to 'New Project', new_admin_project_path %>
+<div class="bar">
+  <div class="right">
+    <%= link_to 'Novo projeto', new_admin_project_path, :class => "button" %>
+  </div>
+</div>

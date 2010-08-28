@@ -16,7 +16,7 @@
           <li><%= link_to 'blog', admin_posts_path %><li>
           <li><%= link_to 'encontros', admin_meetings_path %></li>
           <li><a href="/">membros</a></li>
-          <li><a href="/">projetos</a></li>
+          <li><%= link_to 'projetos', admin_projects_path %></li>
           <li><%= link_to 'usuários', admin_users_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'logout', destroy_user_session_path %></li>
