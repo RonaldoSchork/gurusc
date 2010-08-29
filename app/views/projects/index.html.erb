@@ -10,7 +10,7 @@
       <%= project.description %>
       <h4>Membros colaboradores</h4>
       
-      <% content_tag :div :id => "sub_content" do %>
+      <% content_tag :div, :id => "sub_content" do %>
         <% project.users.each do |user| %>
           <%= link_to user.full_name %>
         <% end %>
@@ -19,4 +19,6 @@
     <% end %>
 
   <% end %>
+<% else %>
+  <p>Ainda não há projetos cadastrados.</p>
 <% end %>
