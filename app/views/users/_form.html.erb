@@ -1,4 +1,4 @@
-<%= form_for [:admin, @user] do |f| %>
+<%= form_for @user do |f| %>
 
   <%= error_messages_for @user %>
   
@@ -22,12 +22,11 @@
     <%= f.label "Repetir senha" %>
     <%= f.password_field :password_confirmation %>
   </div>
-
   <hr />
 
   <p>
     <%= f.submit "Criar",  :class => "button" %> 
-    ou <%= link_to "Cancelar", admin_users_path %>
+    ou <%= link_to "Cancelar", users_path %>
   </p>
 
 <% end %>

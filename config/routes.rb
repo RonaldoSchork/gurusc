@@ -5,7 +5,7 @@ Gurusc::Application.routes.draw do
     get 'member_remove', :on => :member
   end
   
-  resources :projects
+  resources :users
 
   resources :meetings
 
