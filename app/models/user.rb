@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :full_name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :full_name, :city
 
   has_many :posts
   has_many :meetings
