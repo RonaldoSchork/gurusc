@@ -8,6 +8,8 @@ Gurusc::Application.routes.draw do
   end
   
   resources :users
+  
+  match '/membros' => "users#index"
 
   resources :meetings
   
