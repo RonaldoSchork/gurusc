@@ -1,4 +1,6 @@
 Gurusc::Application.routes.draw do
+
+  root :to => "home#index"
   
   resources :projects do
     get 'member_add', :on => :member
@@ -8,8 +10,6 @@ Gurusc::Application.routes.draw do
   resources :users
 
   resources :meetings
-
-  root :to => "home#index"
   
   scope '/admin' do
     devise_for :users, :controllers => {
@@ -17,6 +17,11 @@ Gurusc::Application.routes.draw do
       :passwords     => "admin/passwords"
     }
   end
+  devise_scope :user do
+    get "/login" => "devise/sessions#new"
+    get "/logout" => "devise/sessions#destroy"
+  end
+
 
   namespace :admin do
     root :to => "posts#index"

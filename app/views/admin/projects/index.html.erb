@@ -18,8 +18,10 @@
 
 <hr />
 
-<div class="bar">
-  <div class="right">
-    <%= link_to 'Novo projeto', new_admin_project_path, :class => "button" %>
+<% if can? :create, Project %>
+  <div class="bar">
+    <div class="right">
+      <%= link_to 'Novo projeto', new_admin_project_path, :class => "button" %>
+    </div>
   </div>
-</div>
+<% end %>

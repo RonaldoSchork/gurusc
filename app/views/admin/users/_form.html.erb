@@ -22,6 +22,11 @@
     <%= f.label "Repetir senha" %>
     <%= f.password_field :password_confirmation %>
   </div>
+  <div class="field">
+    <%= f.label "Permissão" %>
+    <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+    <%= puts params.inspect %>
+  </div>
 
   <hr />
 

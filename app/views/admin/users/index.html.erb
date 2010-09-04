@@ -1,10 +1,9 @@
 <h2>Usuários</h2>
 
-<%- if @users.present? -%>
 <ul class="list">
   <% @users.each do |user| %>
     <%= content_tag_for :li, user, :class => cycle(:odd, :even) do %>
-      <%= link_to "#{user.full_name} (#{user.email})", [:edit, :admin, user] %>
+      <%= "#{user.full_name} (#{user.email})" %>
 
       <div class="right">
         <%= link_to_edit [:edit, :admin, user] %>
@@ -13,7 +12,6 @@
     <% end %>
   <% end %>
 </ul>
-<%- end -%>
 
 <hr />
 

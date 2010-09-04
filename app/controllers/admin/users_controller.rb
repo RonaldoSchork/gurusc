@@ -18,6 +18,7 @@ class Admin::UsersController < Admin::AdminController
     @user = User.new(params[:user])
     flash[:notice] = 'Usuário criado com sucesso.' if @user.save
     respond_with @user, :location => admin_users_path
+    puts params.inspect
   end
 
   def update
