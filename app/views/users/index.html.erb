@@ -7,11 +7,11 @@
     
       <span class="gravatar"><%= gravatar_image_tag user.email %></span>
       
-      <span class="name"><%= link_to "#{user.full_name}", [:edit, user] %></span>
+      <span class="name"><%= link_to "#{user.full_name}", user %></span>
       
       <span class="city"><%= user.city %></span>
       
-      <span class="projects", class="right">
+      <span class="right">
         <% if user.projects.present? %>
           <%= link_to "#{user.projects.count} projetos open source"%>
         <% else %>

@@ -14,7 +14,7 @@
       <% content_tag :div, :id => "sub_content" do %>
 
         <% project.users.each do |user| %>
-          <%= link_to user.full_name %>
+          <%= link_to user.full_name, user %>
           <br />
         <% end %>
         <br />
