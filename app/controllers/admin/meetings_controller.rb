@@ -20,15 +20,15 @@ class Admin::MeetingsController < Admin::AdminController
   end
 
   def create
-    @meeting = Meeting.new(params[:meeting])
-    flash[:notice] = 'Meeting was successfully created.' if @meeting.save
+    @meeting = Meeting.create(params[:meeting])
+    flash[:notice] = 'Encontro criado com sucesso.' if @meeting.save
     respond_with @meeting, :location => admin_meetings_path
 
   end
 
   def update
     @meeting = Meeting.find(params[:id])
-    flash[:notice] = 'Meeting was successfully updated.' if @meeting.update_attributes(params[:meeting])
+    flash[:notice] = 'Encontro atualizado com sucesso.' if @meeting.update_attributes(params[:meeting])
     respond_with @meeting, :location => edit_admin_meeting_path(@meeting)
   end
 

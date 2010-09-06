@@ -24,13 +24,13 @@ class Admin::PostsController < Admin::AdminController
 
   def create
     @post = Post.new(params[:post])
-    flash[:notice] = 'Post was successfully created.' if @post.save
+    flash[:notice] = 'Post criado com sucesso.' if @post.save
     respond_with @post, :location => admin_posts_path
   end
 
   def update
     @post = Post.find(params[:id])
-    flash[:notice] = 'Post was successfully updated.' if @post.update_attributes(params[:post])
+    flash[:notice] = 'Post atualizado com sucesso.' if @post.update_attributes(params[:post])
     respond_with @post, :location => edit_admin_post_path(@post)
   end
 

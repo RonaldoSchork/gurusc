@@ -9,20 +9,20 @@
 <body>
   <div id="wrapper">
     <div id="login" class="right">
+      <% if user_signed_in? %>
         <%= link_to current_user.full_name, current_user %> | <%= link_to 'logout', logout_path %>
+      <% end %>
     </div>
     <div id="header">
       <h1><%= application_title %></h1>
-      <div id="main-nav">
-        <ul>
-          <li><%= link_to 'home', root_path %></li>
-          <li><%= link_to 'blog', admin_posts_path %><li>
-          <li><%= link_to 'encontros', admin_meetings_path %></li>
-          <li><%= link_to 'membros', admin_users_path %></li>
-          <li><%= link_to 'projetos', admin_projects_path %></li>
-          <li><%= link_to 'usuários', admin_users_path %></li>
-        </ul>
-      </div>
+      <ul>
+        <li><%= link_to 'home', root_path %></li>
+        <li><%= link_to 'blog', admin_posts_path %><li>
+        <li><%= link_to 'encontros', admin_meetings_path %></li>
+        <li><%= link_to 'membros', admin_users_path %></li>
+        <li><%= link_to 'projetos', admin_projects_path %></li>
+        <li><%= link_to 'usuários', admin_users_path %></li>
+      </ul>
     </div>
 
     <div id="content">

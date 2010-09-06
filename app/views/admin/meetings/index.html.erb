@@ -1,6 +1,6 @@
 <h2>Encontros</h2>
 
-<%- if @meetings.present? -%>
+<% if @meetings.present? %>
 <ul class="list">
   <% @meetings.each do |meeting| %>
     <%= content_tag_for :li, meeting, :class => cycle(:odd, :even) do %>
@@ -13,9 +13,9 @@
     <% end %>
   <% end %>
 </ul>
-<%- else -%>
+<% else %>
   <p>Ainda não há encontros cadastrados.</p>
-<%- end -%>
+<% end %>
 
 <hr />
 

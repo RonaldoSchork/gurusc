@@ -21,13 +21,13 @@ class Admin::PostCategoriesController < Admin::AdminController
 
   def create
     @category = PostCategory.new(params[:post_category])
-    flash[:notice] = 'Category was successfully created.' if @category.save
+    flash[:notice] = 'Categoria criada com sucesso' if @category.save
     respond_with @post, :location => admin_post_categories_path
   end
 
   def update
     @category = PostCategory.find(params[:id])
-    flash[:notice] = 'Category was successfully updated.' if @category.update_attributes(params[:post_category])
+    flash[:notice] = 'Categoria atualizada com sucesso.' if @category.update_attributes(params[:post_category])
     respond_with @category, :location => admin_post_categories_path
   end
 

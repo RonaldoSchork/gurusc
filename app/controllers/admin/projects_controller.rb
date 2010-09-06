@@ -17,13 +17,13 @@ class Admin::ProjectsController < Admin::AdminController
   def create
     @project = Project.new(params[:project])
     @project.user_ids = [current_user.id]
-    flash[:notice] = 'project was successfully created.' if @project.save
+    flash[:notice] = 'Projeto criado com sucesso.' if @project.save
     respond_with @project, :location => admin_projects_path
   end
 
   def update
     @project = Project.find(params[:id])
-    flash[:notice] = 'Project was successfully updated.' if @project.update_attributes(params[:project])
+    flash[:notice] = 'Projeto atualizado com sucesso.' if @project.update_attributes(params[:project])
     respond_with @project, :location => edit_admin_project_path(@project)
   end
 

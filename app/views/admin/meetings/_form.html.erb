@@ -1,9 +1,16 @@
-<%= form_for [:admin, @meeting] do |f| %>
+<%= form_for [:admin, @meeting], :html => { :multipart => true } do |f| %>
   <%= error_messages_for @meeting %>
 
   <div class="field">
     <%= f.label 'Título' %><br />
     <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= image? @meeting %>
+  </div>
+  <div class="field">
+    <%= f.label 'Imagem' %><br />
+    <%= f.file_field :image %>
   </div>
   <div class="field">
     <%= f.label 'Data' %><br />

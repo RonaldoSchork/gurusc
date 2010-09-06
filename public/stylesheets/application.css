@@ -1,9 +1,9 @@
 @import "reset.css";
 
 /* basic */
-ul { list-style:none; }
-.odd { background-color:#e0ebe4; }
-.even { background-color:#FFF; }
+ul { list-style: none; }
+.odd { background-color: #e0ebe4; }
+.even { background-color: #FFF; }
 .left { float: left; }
 .right { float: right; }
 
@@ -19,13 +19,16 @@ body {
 }
 
 hr {
-  background-color:#7e1f1f;
+  background-color: #7e1f1f;
   border:medium none;
   height:1px;
-  margin-top: 20px;
 }
 
-h2, h3, h4, h5 { font-family: Bitstream Charter, FreeSerif, Georgia, Times New Roman, serif; }
+h2, h3, h4, h5 {
+  font-family: Bitstream Charter, FreeSerif, Georgia, Times New Roman, serif;
+  margin-bottom: 10px;
+}
+
 h2 { font-size: 25px; }
 h3 { font-size: 20px; }
 
@@ -93,7 +96,8 @@ div#wrapper {
 
 div#header {
   height: 126px;
-  margin-bottom: 30px;
+  width: 960px;
+  float: left;
 }
 
 div#header h1 {
@@ -107,19 +111,17 @@ div#header h1 {
 
 /* Menu */
 
-div#header #main-nav {
-  float:right;
-  margin-top: 70px;
-  margin-left: 220px;
+div#header ul {
+  float: right;
+  margin-top: 50px;
 }
 
-div#header #main-nav li {
+div#header li {
   display:inline;
-  float:left;
-  margin-left:22px;
+  margin-left:20px;
 }
 
-div#header #main-nav a {
+div#header a {
   font-family: Bitstream Charter, FreeSerif, Georgia, Times New Roman, serif;
   font-size: 20px;
 }
@@ -127,15 +129,19 @@ div#header #main-nav a {
 /* Content */
 div#content {
   float: left;
-  width: 920px;
-  padding: 20px;
-  margin: 40px 0 40px 0;
+  width: 960px;
+  margin: 20px 0 20px 0;
   background-color: white;
+}
+
+div#sub_content {
+  float: left;
+  margin: 20px 0 20px 0;
 }
 
 div#home_post {
   float: left;
-  width: 920px;
+  width: 960px;
 }
 
 div.note {
@@ -194,3 +200,20 @@ div#sidebar {
 .list li {
   padding: 4px 6px 4px 6px;
 }
+
+/*Meetings*/
+
+div.meeting_image {
+  width: 400px;
+  float: left;
+  margin: 0 20px 0 0;
+}
+
+div.meeting_image p {
+  text-align: center;
+}
+
+div.meeting_image p a {
+  margin: 0 5px 0 5px;
+}
+
