@@ -30,7 +30,6 @@ class Admin::MeetingsController < Admin::AdminController
     @meeting = Meeting.find(params[:id])
     flash[:notice] = 'Meeting was successfully updated.' if @meeting.update_attributes(params[:meeting])
     respond_with @meeting, :location => edit_admin_meeting_path(@meeting)
-
   end
 
   def destroy

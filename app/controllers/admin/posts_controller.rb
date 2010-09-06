@@ -8,7 +8,6 @@ class Admin::PostsController < Admin::AdminController
 
   def show
     @post = Post.find(params[:id])
-
     respond_with @post do |format|
       format.html { render :layout => "application" }
     end
@@ -25,7 +24,6 @@ class Admin::PostsController < Admin::AdminController
 
   def create
     @post = Post.new(params[:post])
-
     flash[:notice] = 'Post was successfully created.' if @post.save
     respond_with @post, :location => admin_posts_path
   end
@@ -39,12 +37,10 @@ class Admin::PostsController < Admin::AdminController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-
     respond_with @post, :location => admin_posts_path
   end
 
 protected
-
   def load_resources
     @authors = User.all
     @categories = PostCategory.all
