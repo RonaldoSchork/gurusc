@@ -1,7 +1,7 @@
 <h2>Usuários</h2>
 
-<%- if @users.present? -%>
-<ul class="list">
+<% if @users.present? %>
+<ul class="list_user">
   <% @users.each do |user| %>
     <%= content_tag_for :li, user, :class => cycle(:odd, :even) do %>
     
@@ -11,7 +11,7 @@
       
       <span class="city"><%= user.city %></span>
       
-      <span class="right">
+      <span class="project">
         <% if user.projects.present? %>
           <%= link_to "#{user.projects.count} projetos open source"%>
         <% else %>
@@ -22,12 +22,14 @@
     <% end %>
   <% end %>
 </ul>
-<%- end -%>
+<% end %>
 
-<hr />
 
-<div class="bar">
-  <div class="right">
-    <%= link_to 'Cadastre-se', new_user_path, :class => "button" %>
+<% unless user_signed_in? %>
+  <hr />
+  <div class="bar">
+    <div class="right">
+      <%= link_to 'Cadastre-se', new_user_path, :class => "button" %>
+    </div>
   </div>
-</div>
+<% end %>

@@ -26,7 +26,6 @@ hr {
 
 h2, h3, h4, h5 {
   font-family: Bitstream Charter, FreeSerif, Georgia, Times New Roman, serif;
-  margin-bottom: 10px;
 }
 
 h2 { font-size: 25px; }
@@ -98,6 +97,7 @@ div#header {
   height: 126px;
   width: 960px;
   float: left;
+  margin-bottom: 10px;
 }
 
 div#header h1 {
@@ -217,3 +217,45 @@ div.meeting_image p a {
   margin: 0 5px 0 5px;
 }
 
+/* User */
+
+ul.list_user {
+  margin: 10px 0 0 0;
+}
+
+ul.list_user li {
+  float: left;
+  width: 960px;
+  margin: 0 0 10px 0;
+  padding: 5px 0 5px 0;
+}
+
+ul.list_user li .name, .project, .city { margin-top: 18px; }
+
+ul.list_user li .name {
+  float: left;
+  width: 330px;
+  margin-left: 20px;
+}
+
+ul.list_user li .city {
+  float: left;
+  width: 270px;
+  text-align: center;
+}
+
+ul.list_user li .name, .city {
+  float: left;
+}
+
+ul.list_user li span.project {
+  float: right;
+  width: 250px;
+  margin-right: 30px;
+  text-align: right;
+}
+
+ul.list_user li span.gravatar {
+  float: left;
+  margin: 4px 0 0 12px;
+}
