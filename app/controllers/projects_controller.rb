@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
 
+  load_and_authorize_resource
+
   def index
     @projects = Project.all
     respond_with @projects
@@ -8,6 +10,29 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     respond_with @project
+  end
+
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def create
+    @project = Project.new(params[:project])
+    @project.user_ids = [current_user.id]
+    flash[:notice] = 'Projeto criado com sucesso.' if @project.save
+    respond_with @project, :location => projects_path
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    flash[:notice] = 'Projeto atualizado com sucesso.' if @project.update_attributes(params[:project])
+    respond_with @project, :location => edit_project_path(@project)
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    respond_with @project, :location => projects_path
   end
     
   def member_add

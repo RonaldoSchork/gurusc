@@ -1,0 +1,24 @@
+<%= form_for @project do |f| %>
+
+  <%= error_messages_for @project %>
+  
+  <div class="field">
+    <%= f.label "Nome:" %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Descrição:" %><br />
+    <%= f.text_field :description %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "GitHub:" %><br />
+    <%= f.text_field :git %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Criar" %>
+  </div>
+  
+<% end %>

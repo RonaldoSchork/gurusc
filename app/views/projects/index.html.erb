@@ -1,39 +1,43 @@
-<h2>Projetos opensource</h2>
+<h2>Projetos Open Source</h2>
 
 <% if @projects.present? %>
-    <% @projects.each do |project| %>
-    
-    <% content_tag :div, :id => "project_content", :class => cycle(:odd, :even)  do %>
+  <% @projects.each do |project| %>
+  
+    <%= content_tag :div, :id => "project_content", :class => cycle(:odd, :even)  do %>
+      <% if user_signed_in? %>
+        <% unless project.users.include? current_user %>
+          <%= link_to "Faço parte deste projeto", [:member_add, project], :class => "project_user", :method => :get %>
+        <% else %>
+          <%= link_to "Não faço parte deste projeto", [:member_remove, project], :class => "project_user", :method => :get %>
+        <% end %>
+      <% end %>
     
       <h3><%= link_to project.name, project.git, :target => '_blank' %></h3>
-      
-      <%= project.description %>
-      
-      <h4>Membros colaboradores</h4>
-      
-      <% content_tag :div, :id => "project_user_content" do %>
-
-        <% project.users.each do |user| %>
-          <%= link_to gravatar_image_tag(user.email), user, :target => "_blank", :title => user.full_name %>
-          <br />
-        <% end %>
-        <br />
-        
-        <% if user_signed_in? %>
-        
-          <% unless project.users.include? current_user %>
-            <%= link_to "Faço parte do projeto", [:member_add, project], :class => "right", :method => :get %>
-            <br /> 
-          <% else %>
-            <%= link_to "Não faço parte do projeto", [:member_remove, project], :class => "right", :method => :get %>
+    
+      <p><%= project.description %></p>
+    
+      <% if project.users.present? %>
+        <ul>
+          <h4>Membros colaboradores</h4>
+          <% project.users.each do |user| %>
+            <li><%= link_to gravatar_image_tag(user.email), user, :target => "_blank", :title => user.full_name %></li>
           <% end %>
-        <% end %>
-        
+        </ul>
       <% end %>
       
     <% end %>
 
   <% end %>
+
+  <% if user_signed_in? %>
+    <hr />
+    <div class="bar">
+      <div class="right">
+        <%= link_to_new new_project_path %>
+      </div>
+    </div>
+  <% end %>
+
 <% else %>
   <p>Ainda não há projetos cadastrados.</p>
 <% end %>
