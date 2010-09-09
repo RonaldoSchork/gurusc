@@ -5,9 +5,4 @@ class MeetingsController < ApplicationController
     respond_with @meetings
   end
 
-  def show
-    @meeting = Meeting.find(params[:id])
-    respond_with @meeting
-  end
-
 end
