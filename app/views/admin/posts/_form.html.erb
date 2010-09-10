@@ -71,14 +71,6 @@
       <hr />
     <% end %>
     
-    <%= section "Imagens" do %>
-      <div class="media">
-        <%- @uploads.each do |a| -%>
-          <%= link_to image_tag(a.document.url(:thumb)) , a.document.url(:medium), :target => "_blank"  %>
-        <%- end -%>
-      </div>
-    <% end %>
-    
   </div>
 
 <% end %>
