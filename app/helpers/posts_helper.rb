@@ -9,4 +9,20 @@ module PostsHelper
     name = "Anonymous Coward" unless name.present?
     url.present? ? link_to(name, url, :target => "_blank") : name
   end
+
+  def p_category(id)
+    PostCategory.find(id).name
+  end
+
+  def if_comments?(post)
+    if post.comments.count == 1
+      "#{post.comments.count} comentário"
+    elsif post.comments.count == 0
+      "Seja o primeiro a comentar"
+    else
+      "#{post.comments.count} comentários"
+    end
+  end
+
+
 end
