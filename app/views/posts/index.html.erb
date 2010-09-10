@@ -1,20 +1,31 @@
 <div id="column1">
-  <%- if @posts.present? -%>
-    <%- @posts.each do |post| -%>
-      
+  <% if @posts.present? %>
+    <% @posts.each do |post| %>
+
       <h2><%= link_to post.title, post %></h2>
+
+      <div class="post_info">
+        <p>por <%= link_to post.author.full_name, user_path(post.author_id) %>
+        em <%= post.created_at.strftime("%d de %B") %></p>
+      </div>
       
       <div id="post">
         <%= textilize post.body %>
       </div>
-      
-      <hr/>
-      
-    <%- end -%>
+
+      <div class="post_info">
+        Em
+        <% post.category_ids.each do |id| %>
+          <%= link_to p_category(id), posts_path(:category_id => (id)) %>
+        <% end %>
+        <p><%= if_comments? post %></p>
+      </div>
+
+    <% end %>
     
-  <%- else -%>
+  <% else %>
     <p>Não há posts.</p> 
-  <%- end -%>
+  <% end %>
 </div>
 
 <%= render "sidebar" %>

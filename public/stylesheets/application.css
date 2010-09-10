@@ -171,13 +171,25 @@ div#home_post hr {
 
 div#column1 {
   float: left;
-  width: 600px;
+  width: 630px;
 }
 
-div#column2{
+div#column1 #post {
+  margin-bottom: 20px;
+}
+
+div#column1 .post_info {
+  margin-bottom: 20px;
+}
+
+div#column2 {
   float: left;
-  width: 280px;
-  margin-left:40px;
+  width: 270px;
+  margin-left: 20px;
+}
+
+div#column2 form, div#column2 ul {
+  margin-bottom: 15px;
 }
 
 div.comment {
@@ -205,7 +217,7 @@ div#sidebar {
 /*Meetings*/
 
 div.meeting_image {
-  width: 400px;
+  width: 330px;
   float: left;
   margin: 0 20px 0 0;
 }
@@ -227,7 +239,6 @@ ul.list_user {
 ul.list_user li {
   float: left;
   width: 920px;
-  margin: 0 0 10px 0;
   padding: 5px 0 5px 0;
 }
 
@@ -259,6 +270,43 @@ ul.list_user li span.project {
 ul.list_user li span.gravatar {
   float: left;
   margin: 4px 0 0 12px;
+}
+
+/* User#show */
+
+div.show_user {
+  width: 920px;
+  height: 48px;
+  float: left;
+}
+
+div.show_user .gravatar, div.show_user .name, div.show_user .email {
+  float: left;
+}
+
+div.show_user .name {
+  margin: 7px 10px 0 10px;
+}
+
+div.show_user .email {
+  margin: 15px 10px 0 10px;
+}
+
+div.show_user .city {
+  float: right;
+  margin: 15px 0 0 0;
+}
+
+.show_user_projects {
+  float: left;
+  width: 100%;
+  margin: 20px 0 0 0;
+}
+.show_user_projects li {
+  margin-top: 10px;
+}
+.user_edit {
+  float: left;
 }
 
 /* Project */

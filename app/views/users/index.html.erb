@@ -1,27 +1,27 @@
 <h2>Usuários</h2>
 
 <% if @users.present? %>
-<ul class="list_user">
-  <% @users.each do |user| %>
-    <%= content_tag_for :li, user, :class => cycle(:odd, :even) do %>
-    
-      <span class="gravatar"><%= gravatar_image_tag user.email %></span>
+  <ul class="list_user">
+    <% @users.each do |user| %>
+      <%= content_tag_for :li, user, :class => cycle(:odd, :even) do %>
       
-      <span class="name"><%= link_to "#{user.full_name}", user %></span>
-      
-      <span class="city"><%= user.city %></span>
-      
-      <span class="project">
-        <% if user.projects.present? %>
-          <%= link_to "#{user.projects.count} projetos open source"%>
-        <% else %>
-          Nenhum projeto open source
-        <% end %>
-      </span>
-      
+        <span class="gravatar"><%= gravatar_image_tag user.email %></span>
+        
+        <span class="name"><%= link_to "#{user.full_name}", user %></span>
+        
+        <span class="city"><%= user.city %></span>
+        
+        <span class="project">
+          <% if user.projects.present? %>
+            <%= link_to "#{user.projects.count} projetos open source", user %>
+          <% else %>
+            Nenhum projeto open source
+          <% end %>
+        </span>
+        
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
 <% end %>
 
 
