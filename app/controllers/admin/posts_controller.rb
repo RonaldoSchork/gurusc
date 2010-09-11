@@ -44,6 +44,5 @@ protected
   def load_resources
     @authors = User.all
     @categories = PostCategory.all
-    @uploads = Upload.order("created_at DESC")
   end
 end
