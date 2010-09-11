@@ -14,15 +14,4 @@ module PostsHelper
     PostCategory.find(id).name
   end
 
-  def if_comments?(post)
-    if post.comments.count == 1
-      "#{post.comments.count} comentário"
-    elsif post.comments.count == 0
-      "Seja o primeiro a comentar"
-    else
-      "#{post.comments.count} comentários"
-    end
-  end
-
-
 end

@@ -18,7 +18,7 @@
         <% post.category_ids.each do |id| %>
           <%= link_to p_category(id), posts_path(:category_id => (id)) %>
         <% end %>
-        <p><%= if_comments? post %></p>
+        <p><%= pluralize(post.comments.count, ' comentário', ' comentários') %></p>
       </div>
 
     <% end %>

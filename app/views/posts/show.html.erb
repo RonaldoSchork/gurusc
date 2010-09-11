@@ -15,14 +15,13 @@
     <% @post.category_ids.each do |id| %>
       <%= link_to p_category(id), posts_path(:category_id => (id)) %>
     <% end %>
-    <p><%= if_comments? @post %></p>
   </div>
   
   <hr />
 
   <div id="comments">
 
-    <h3><%= if_comments? @post %></h3>
+    <h3><%= pluralize(@post.comments.count, ' comentário', ' comentários') %></h3>
 
     <%= render @post.comments if @post.comments.any? %>
       
