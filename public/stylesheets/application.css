@@ -196,6 +196,14 @@ div.comment {
   padding: 20px 0 20px 0;
 }
 
+/* footer */
+div#footer {
+  float: left;
+  width: 920px;
+  text-align: center;
+  margin-bottom: 20px
+}
+
 /* Admin */
 div#body {
   float: left;

@@ -28,8 +28,11 @@
       <%= flash_messages %>
       <%= yield %>
     </div>
-  </div>
 
-  <%= yield :bottom %>
+    <div id="footer">
+      Website por <%= link_to "Marcelo Griggio Cajueiro", "http://www.twitter.com/marcelocajueiro" %> e tutoriado por <%= link_to "Carlos Antonio da Silva", "http://www.twitter.com/cantoniodasilva" %>
+    </div>
+
+  </div>
 </body>
 </html>
