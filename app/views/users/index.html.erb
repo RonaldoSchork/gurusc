@@ -12,8 +12,8 @@
         <span class="city"><%= user.city %></span>
         
         <span class="project">
-          <% if user.projects.present? %>
-            <%= link_to "#{user.projects.count} projetos open source", user %>
+          <% if user.number_of_projects > 0 %>
+            <%= link_to "#{user.number_of_projects} projetos open source", user %>
           <% else %>
             Nenhum projeto open source
           <% end %>
