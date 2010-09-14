@@ -30,11 +30,8 @@
   <% end %>
 
   <% if user_signed_in? %>
-    <hr />
     <div class="bar">
-      <div class="right">
-        <%= link_to_new new_project_path %>
-      </div>
+      <%= link_to_new new_project_path, :class => "right" %>
     </div>
   <% end %>
 

@@ -17,7 +17,7 @@
       
       <h3><%= meeting.title %></h3>
       
-      <p>dia <%= meeting.date %> por <%= meeting.autor %></p><br />
+      <p>dia <%= meeting.date.strftime("%d de %B") %> por <%= meeting.autor %></p><br />
       
       <p><%= meeting.description %></p>
 

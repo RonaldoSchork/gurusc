@@ -2,15 +2,13 @@
   Seja <strong>bem-vindo</strong> ao Grupo de Usuários Ruby (Rails) de <strong>Santa Catarina</strong>. <br />Nosso intuito é unir pessoas com objetivos em comum, difundir esta maravilhosa linguagem (framework) com a qual trabalhamos por <strong>prazer</strong>.
 </div>
 
-<hr />
-
 <% if @last_meeting.present? %>
   <div id="main_content_home">
     <h2>Próximo encontro</h2>
-    <h3><%= link_to @last_meeting.title, @last_meeting %></h3>
-    <p>dia <%= @last_meeting.date %> por <%= @last_meeting.autor %></p>
+    <h3><%= link_to @last_meeting.title, meetings_path %></h3>
+    <p>dia <%= @last_meeting.date.strftime("%d de %B") %> por <%= @last_meeting.autor %></p>
     <%= @last_meeting.description[0..400] + "..." %>
-    <br/>
+    <p><%= link_to "Saiba mais", meetings_path  %></p>
   </div>
 <% end %>
 <div id="right_content">
@@ -27,13 +25,11 @@
 
 <% if @last_post.present? %>
   <div id="home_post">
-    <hr />
     <h2>Últimos posts</h2>
       <h3><%= link_to @last_post.title, @last_post %></h3>
       <div id="post">
         <%= simple_format @last_post.excerpt %>
       </div>
       <%= link_to "Continuar lendo...", @last_post %>
-      <hr/>
   </div>
 <% end %>

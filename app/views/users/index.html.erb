@@ -26,10 +26,7 @@
 
 
 <% unless user_signed_in? %>
-  <hr />
   <div class="bar">
-    <div class="right">
-      <%= link_to 'Cadastre-se', new_user_path, :class => "button" %>
-    </div>
+    <%= link_to_new new_user_path, :class => "right" %>
   </div>
 <% end %>

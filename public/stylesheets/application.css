@@ -2,7 +2,7 @@
 
 /* basic */
 ul { list-style: none; }
-.odd { background-color: #e0ebe4; }
+.odd { background-color: #C6DBC1; }
 .even { background-color: #FFF; }
 .left { float: left; }
 .right { float: right; }
@@ -15,7 +15,7 @@ body {
   padding: 0;
   color: black;
   background-color: #FFF !important;
-  text-align:center;
+  text-align: center;
 }
 
 hr {
@@ -135,9 +135,12 @@ div#content {
   background-color: white;
 }
 
+div#content h2 {
+  margin-bottom: 15px;
+}
 div#sub_content {
   float: left;
-  margin: 20px 0 20px 0;
+  margin-bottom: 20px
 }
 
 div#home_post {
@@ -146,18 +149,23 @@ div#home_post {
 }
 
 div.note {
+  width: 100%;
+  margin-bottom: 25px;
   font-size: 25px;
 }
 
 div#main_content_home {
   float: left;
-  width: 550px;
+  width: 570px;
 }
 
+div#main_content_home p {
+  margin-bottom: 10px;
+}
 div#right_content {
   float: left;
   width: 330px;
-  margin-left:40px;
+  margin: 0 0 20px 20px;
 }
 
 div#home_post {
@@ -165,13 +173,13 @@ div#home_post {
   margin-top: 20px;
 }
 
-div#home_post hr {
-  margin-bottom:40px;
-}
-
 div#column1 {
   float: left;
   width: 630px;
+}
+
+div#column1 h2 {
+  margin: 0 !important;
 }
 
 div#column1 #post {
@@ -239,11 +247,6 @@ div.meeting_image p a {
 }
 
 /* User */
-
-ul.list_user {
-  margin: 10px 0 0 0;
-}
-
 ul.list_user li {
   float: left;
   width: 920px;
@@ -322,7 +325,6 @@ div.show_user .city {
 div#project_content {
   float: left;
   width: 920px;
-  margin: 20px 0 0 0;
   padding: 5px 10px 10px 10px;
 }
 
