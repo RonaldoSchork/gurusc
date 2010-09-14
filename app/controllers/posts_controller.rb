@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:search]) if params[:search].present?
     @posts = @category.posts if @category.present?
     @posts = @posts.published
+    @posts = @posts.order("published_at desc")
     
     respond_with @posts do |format|
       format.atom
