@@ -3,22 +3,22 @@
   <%= error_messages_for comment %>
   
   <div class="field">
-    <%= f.label "Autor" %><br />
+    <%= f.label :author, "Autor" %><br />
     <%= f.text_field :author %>
   </div>
   
   <div class="field">
-    <%= f.label "E-mail" %><br />
+    <%= f.label :email, "E-mail" %><br />
     <%= f.text_field :email %>
   </div>
   
   <div class="field">
-    <%= f.label :url %><br />
+    <%= f.label :url, "Site" %><br />
     <%= f.text_field :url %>
   </div>
   
   <div class="field">
-    <%= f.label "Comentário" %><br />
+    <%= f.label :body, "Comentário" %><br />
     <%= f.text_area :body, :rows => 10, :cols => 70 %>
   </div>
   

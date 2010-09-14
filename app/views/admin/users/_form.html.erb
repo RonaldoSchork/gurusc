@@ -3,27 +3,27 @@
   <%= error_messages_for @user %>
   
   <div class="field">
-    <%= f.label "Nome completo" %>
+    <%= f.label :full_name, "Nome completo" %>
     <%= f.text_field :full_name %>
   </div>
   <div class="field">
-    <%= f.label "E-mail" %>
+    <%= f.label :email, "E-mail" %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label "Cidade" %>
+    <%= f.label :city, "Cidade" %>
     <%= f.text_field :city %>
   </div>
   <div class="field">
-    <%= f.label "Senha" %>
+    <%= f.label :password, "Senha" %>
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label "Repetir senha" %>
+    <%= f.label :password_confirmation, "Repetir senha" %>
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">
-    <%= f.label "Permissão" %>
+    <%= f.label :role, "Permissão" %>
     <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
     <%= puts params.inspect %>
   </div>

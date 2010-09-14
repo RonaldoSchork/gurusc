@@ -3,30 +3,28 @@
   <%= error_messages_for @user %>
   
   <div class="field">
-    <%= f.label "Nome completo" %>
+    <%= f.label "Nome completo" %><br />
     <%= f.text_field :full_name %>
   </div>
   <div class="field">
-    <%= f.label "E-mail" %>
+    <%= f.label "E-mail" %><br />
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label "Cidade" %>
+    <%= f.label "Cidade" %><br />
     <%= f.text_field :city %>
   </div>
   <div class="field">
-    <%= f.label "Senha" %>
+    <%= f.label "Senha" %><br />
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label "Repetir senha" %>
+    <%= f.label "Repetir senha" %><br />
     <%= f.password_field :password_confirmation %>
   </div>
-  <hr />
 
-  <p>
-    <%= f.submit "Criar",  :class => "button" %> 
-    ou <%= link_to "Cancelar", users_path %>
-  </p>
+  <div class="actions">
+    <%= f.submit "Criar" %>
+  </div>
 
 <% end %>

@@ -2,41 +2,51 @@
   <%= error_messages_for @meeting %>
 
   <div class="field">
-    <%= f.label 'Título' %><br />
+    <%= f.label :title, 'Título' %><br />
     <%= f.text_field :title %>
   </div>
+
   <div class="field">
     <%= image? @meeting %>
   </div>
+
   <div class="field">
-    <%= f.label 'Imagem' %><br />
+    <%= f.label :image, 'Imagem' %><br />
     <%= f.file_field :image %>
   </div>
+
   <div class="field">
-    <%= f.label 'Data' %><br />
+    <%= f.label :date, 'Data' %><br />
     <%= f.date_select :date %>
   </div>
+
   <div class="field">
-    <%= f.label 'Autor' %><br />
+    <%= f.label :autor, 'Autor' %><br />
     <%= f.text_field :autor %>
   </div>
+
   <div class="field">
-    <%= f.label 'Descrição' %><br />
+    <%= f.label :description, 'Descrição' %><br />
     <%= f.text_area :description, :rows => 15, :cols => 82 %>
   </div>
+
   <div class="field">
-    <%= f.label 'Link para código' %><br />
+    <%= f.label :code, 'Link para código' %><br />
     <%= f.text_field :code %>
   </div>
+
   <div class="field">
-    <%= f.label 'Link para vídeo' %><br />
+    <%= f.label :video, 'Link para vídeo' %><br />
     <%= f.text_field :video %>
   </div>
+
   <div class="field">
-    <%= f.label 'Link para slide' %><br />
+    <%= f.label :slide, 'Link para slide' %><br />
     <%= f.text_field :slide %>
   </div>
+
   <div class="actions">
     <%= f.submit "Submit", :class => "button" %>
   </div>
+
 <% end %>

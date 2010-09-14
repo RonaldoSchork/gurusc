@@ -11,22 +11,22 @@
     <h2>Novo post</h2>
   <% end %>
     <div class="field">
-      <%= f.label "Autor " %>
+      <%= f.label "Autor" %>
       <%= f.collection_select :author_id, @authors, :id, :full_name %>
     </div>
 
     <div class="field">
-      <%= f.label "Título" %>
+      <%= f.label :title, "Título" %>
       <%= f.text_field :title, :class => "title" %>
     </div>
 
     <div class="field">
-      <%= f.label "Resumo" %>
+      <%= f.label :excerpt, "Resumo" %>
       <%= f.text_area :excerpt, :rows => 5, :cols => 82 %>
     </div>
 
     <div class="field">
-      <%= f.label "Post" %>
+      <%= f.label :body, "Post" %>
       <%= f.text_area :body, :rows => 30, :cols => 82 %>
     </div>
 
@@ -34,8 +34,6 @@
       <%= f.check_box :draft %>
       <%= f.label :draft, "Rascunho?" %>
     </div>
-
-    <hr />
 
     <p>
       <%= f.submit :class => "button" %> ou <%= link_to "cancelar", admin_posts_path %>
@@ -45,9 +43,9 @@
   <div id="sidebar">
     <%= section "Categorias" do %>
       <ul class="categories-field">
-        <%- @categories.each do |c| -%>
+        <% @categories.each do |c| %>
           <li><%= check_box_tag "post[category_ids][]", c.id, @post.categories.include?(c) %> <%= c.name %></li>
-        <%- end -%>
+        <% end %>
       </ul>
       <div class="bar">
         <%= link_to "New category", new_admin_post_category_path, :class => "button right" %>
