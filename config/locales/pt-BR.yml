@@ -169,3 +169,41 @@ pt-BR:
         odd: "deve ser ímpar"
         even: "deve ser par"
         record_invalid: "A validação falhou: %{errors}"
+ 
+  errors:
+    messages:
+      not_found: "não encontrado"
+      already_confirmed: "já foi confirmado"
+      not_locked: "não foi bloqueado"
+  devise:
+    failure:
+      unauthenticated: 'Para continuar, deve logar-se ou registrar-se.'
+      unconfirmed: 'Antes de continuar, deve confirmar a sua conta.'
+      locked: 'A sua conta está bloqueada.'
+      invalid: 'O endereço de correio eletrónico ou a senha inválido.'
+      invalid_token: 'O token de autentificação não é válido.'
+      timeout: 'A sua sessão expirou, por favor faça login novamente para continuar.'
+      inactive: 'A sua conta ainda não foi ativada.'
+    sessions:
+      signed_in: 'Logado com sucesso.'
+      signed_out: 'Deslogado com sucesso.'
+    passwords:
+      send_instructions: 'Dentro de minutos, receberá uma mensagem eletrónica com as instruções de reinicialização da senha.'
+      updated: 'A sua senha foi alterada com sucesso. Agora está conectado.'
+    confirmations:
+      send_instructions: 'Dentro de minutos, receberá uma mensagem eletrónica com as instruções de confirmação da sua conta.'
+      confirmed: 'A sua conta foi confirmada com sucesso. Agora está conectado.'
+    registrations:
+      signed_up: 'Logado com sucesso. Se não autorizado, a confirmação foi enviada ao endereço do seu correio electrónico.'
+      updated: 'A sua conta foi atualizada com sucesso.'
+      destroyed: 'Adeus! A sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve.'
+    unlocks:
+      send_instructions: 'Dentro de minutos, receberá a mensagem eletrónica com instruções de como desbloquear a sua conta.'
+      unlocked: 'A sua conta foi desbloqueada com sucesso. Agora está conectado.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Instruções de confirmação'
+      reset_password_instructions:
+        subject: 'Reinicie as instruções da senha'
+      unlock_instructions:
+        subject: 'Instruções de desbloqueio'
