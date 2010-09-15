@@ -1,8 +1,7 @@
 class ProjectsController < ApplicationController
-
   load_and_authorize_resource
   before_filter :load_user, :only => [:member_remove, :member_add]
-  after_filter :user_save, :only => [:member_remove, :member_add]
+  after_filter  :user_save, :only => [:member_remove, :member_add]
 
   def index
     @projects = Project.all
@@ -36,7 +35,7 @@ class ProjectsController < ApplicationController
     @project.destroy
     respond_with @project, :location => projects_path
   end
-    
+
   def member_add
     @project = Project.find(params[:id])
     @project.user_ids += [current_user.id]
@@ -44,7 +43,7 @@ class ProjectsController < ApplicationController
     flash[:notice] = 'Adicionado ao seus projetos com sucesso.' if @project.save
     redirect_to projects_path
   end
-  
+
   def member_remove
     @project = Project.find(params[:id])
     @project.user_ids -= [current_user.id]
@@ -62,5 +61,4 @@ protected
   def user_save
     @user.save!
   end
-
 end

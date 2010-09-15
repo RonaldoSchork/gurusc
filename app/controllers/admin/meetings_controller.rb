@@ -37,5 +37,4 @@ class Admin::MeetingsController < Admin::AdminController
     @meeting.destroy
     respond_with @meeting, :location => admin_meetings_path
   end
-  
 end

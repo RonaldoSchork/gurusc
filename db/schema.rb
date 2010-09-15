@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100907133831) do
+ActiveRecord::Schema.define(:version => 20100913201824) do
 
   create_table "comments", :force => true do |t|
     t.string   "author"
@@ -74,17 +74,6 @@ ActiveRecord::Schema.define(:version => 20100907133831) do
     t.integer "project_id", :null => false
   end
 
-  create_table "uploads", :force => true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "document_file_name"
-    t.string   "document_content_type"
-    t.integer  "document_file_size"
-    t.datetime "document_updated_at"
-  end
-
   create_table "users", :force => true do |t|
     t.string   "full_name"
     t.string   "email",                               :default => "",       :null => false
@@ -103,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20100907133831) do
     t.datetime "updated_at"
     t.string   "city"
     t.string   "role",                                :default => "member"
+    t.integer  "number_of_projects",                  :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

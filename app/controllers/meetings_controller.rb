@@ -4,5 +4,4 @@ class MeetingsController < ApplicationController
     @meetings = Meeting.order("date desc")
     respond_with @meetings
   end
-
 end

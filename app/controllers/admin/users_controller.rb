@@ -32,5 +32,4 @@ class Admin::UsersController < Admin::AdminController
     @user.destroy
     respond_with @user, :location => admin_users_path
   end
-
 end
