@@ -59,7 +59,6 @@ div.field textarea {
 #alert {
   color: red;
 }
-
 .field_with_errors input, .field_with_errors textarea{
   background-color: #FFFFE6;
   border: 1px solid red;
@@ -139,6 +138,7 @@ div#content h2 {
   margin-bottom: 15px;
 }
 div#sub_content {
+  width: 100%;
   float: left;
   margin-bottom: 20px
 }
