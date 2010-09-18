@@ -1,25 +1,26 @@
-<h2>Encontros</h2>
+<h2>Últimos e futuros encontros</h2>
 
 <% if @meetings.present? %>
 
   <% @meetings.each do |meeting| %>
   
-    <% content_tag :div, :id => "sub_content" do %>
+    <%= content_tag :div, :id => "sub_content" do %>
     
-      <% content_tag :div, :class => "meeting_image" do %>
+      <%= content_tag :div, :class => "meeting_image" do %>
         <%= image? meeting %>
         <p>
           <%= print_present meeting.code, "Código" %>
           <%= print_present meeting.video, "Vídeo" %>
           <%= print_present meeting.slide, "Slide" %>
+          <%= print_present meeting.local, "Local" %>
         </p>
       <% end %>
       
       <h3><%= meeting.title %></h3>
       
-      <p>dia <%= meeting.date.strftime("%d de %B") %> por <%= meeting.autor %></p><br />
+      <p><%= l(meeting.date, :format => :long) %><%= " por #{meeting.autor}" if meeting.autor.present? %></p><br />
       
-      <p><%= meeting.description %></p>
+      <p><%= textilize meeting.description %></p>
 
     <% end %>
     
