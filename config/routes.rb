@@ -1,17 +1,21 @@
 Gurusc::Application.routes.draw do
-
-  root :to => "home#index"
   
+  root :to => "home#index"
+
+  resources :contacts, :only => [:new, :create]
+  match '/contato' => "contacts#new"
+ 
   resources :projects do
     get 'member_add', :on => :member
     get 'member_remove', :on => :member
   end
+  match '/projetos' => "projects#index"
   
-  resources :users
-  
+  resources :users, :except => [:delete]
   match '/membros' => "users#index"
 
-  resources :meetings
+  resources :meetings, :only => [:index]
+  match '/encontros' => "meetings#index"
   
   scope '/admin' do
     devise_for :users, :controllers => {
@@ -35,6 +39,8 @@ Gurusc::Application.routes.draw do
     resources :meetings, :except => [:show]
   end
 
+
+  match '/blog' => "posts#index"
   resources :posts, :only => [:show, :index] do
     resources :comments
   end
