@@ -1,0 +1,30 @@
+<%= form_for(@contact) do |f| %>
+
+  <%= error_messages_for @contact %>
+  <h2>Contato</h2>
+  <p>
+    Caso tenha alguma dúvida, proposta de evento, ideia de projetos, vagas de emprego, entre outras coisas, entre em contato conosco que retornaremos o mais breve possível. Deixamos claro que sua mensagem poderá ser lida por várias pessoas, pois esta é uma comunidade aberta para seus membros.
+  </p>
+
+  <br />
+
+  <div class="field">
+    <%= f.label :name, "Nome" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email, "Email" %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :subject, "Assunto" %><br />
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :message, "Mensagem" %><br />
+    <%= f.text_area :message %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Enviar" %>
+  </div>
+<% end %>
