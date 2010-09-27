@@ -169,6 +169,36 @@ pt-BR:
         odd: "deve ser ímpar"
         even: "deve ser par"
         record_invalid: "A validação falhou: %{errors}"
+        attachment_size: "deve estar entre {{min}} e {{max}} bytes"
+        attachment_type: "deve ser um dos seguintes: {{types}}"
+
+    models:
+      metting: "Encontro"
+    attributes:
+      contact:
+        name: "Nome"
+        email: "E-mail"
+        subject: "Assunto"
+        message: "Mensagem"
+      post:
+        title: "Título"
+        body: "Post"
+        slug: "Permalink"
+      post_category:
+        name: "Nome"
+      meeting:
+        title: "Título"
+        image: "Imagem"
+        description: "Descrição"
+        image_file_size: "Tamanho da imagem"
+        image_content_type: "Tipo de imagem"
+      project:
+        name: "Nome"
+        description: "Descrição"
+      user:
+        full_name: "Nome completo"
+        email: "E-mail"
+        password: "Senha"
  
   errors:
     messages:
