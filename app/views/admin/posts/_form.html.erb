@@ -35,7 +35,7 @@
     </div>
 
     <p>
-      <%= f.submit :class => "button" %> ou <%= link_to "cancelar", admin_posts_path %>
+      <%= f.submit "Enviar", :class => "button" %> ou <%= link_to "cancelar", admin_posts_path %>
     </p>
   </div>
 
@@ -47,7 +47,7 @@
         <% end %>
       </ul>
       <div class="bar">
-        <%= link_to "New category", new_admin_post_category_path, :class => "button right" %>
+        <%= link_to "Criar categoria", new_admin_post_category_path, :class => "button right" %>
       </div>
       <br/>
       <hr />
